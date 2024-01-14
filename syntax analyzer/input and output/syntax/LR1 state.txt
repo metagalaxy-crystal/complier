@@ -1,0 +1,1569 @@
+state 0
+start->sentence 	1	$ 
+sentence->Func 	1	$ 
+sentence->Func sentence 	1	$ 
+Func->FuncDecl 	1	$ int void 
+Func->FuncDef 	1	$ int void 
+FuncDecl->Type Identifier ( FuncParam ) ; 	1	$ int void 
+FuncDecl->Type Identifier ( ) ; 	1	$ int void 
+FuncDef->Type Identifier ( FuncParam ) Block 	1	$ int void 
+FuncDef->Type Identifier ( ) Block 	1	$ int void 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 1
+sentence->Func 	2	$ 
+sentence->Func sentence 	2	$ 
+sentence->Func 	1	$ 
+sentence->Func sentence 	1	$ 
+Func->FuncDecl 	1	$ int void 
+Func->FuncDef 	1	$ int void 
+FuncDecl->Type Identifier ( FuncParam ) ; 	1	$ int void 
+FuncDecl->Type Identifier ( ) ; 	1	$ int void 
+FuncDef->Type Identifier ( FuncParam ) Block 	1	$ int void 
+FuncDef->Type Identifier ( ) Block 	1	$ int void 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 2
+Func->FuncDecl 	2	$ int void 
+
+state 3
+Func->FuncDef 	2	$ int void 
+
+state 4
+FuncDecl->Type Identifier ( FuncParam ) ; 	2	$ int void 
+FuncDecl->Type Identifier ( ) ; 	2	$ int void 
+FuncDef->Type Identifier ( FuncParam ) Block 	2	$ int void 
+FuncDef->Type Identifier ( ) Block 	2	$ int void 
+
+state 5
+Type->int 	2	Identifier 
+
+state 6
+start->sentence 	2	$ 
+
+state 7
+Type->void 	2	Identifier 
+
+state 8
+sentence->Func sentence 	3	$ 
+
+state 9
+FuncDecl->Type Identifier ( FuncParam ) ; 	3	$ int void 
+FuncDecl->Type Identifier ( ) ; 	3	$ int void 
+FuncDef->Type Identifier ( FuncParam ) Block 	3	$ int void 
+FuncDef->Type Identifier ( ) Block 	3	$ int void 
+
+state 10
+FuncDecl->Type Identifier ( FuncParam ) ; 	4	$ int void 
+FuncDecl->Type Identifier ( ) ; 	4	$ int void 
+FuncDef->Type Identifier ( FuncParam ) Block 	4	$ int void 
+FuncDef->Type Identifier ( ) Block 	4	$ int void 
+FuncParam->Type Identifier 	1	) 
+FuncParam->Type Identifier , FuncParam 	1	) 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 11
+FuncDecl->Type Identifier ( ) ; 	5	$ int void 
+FuncDef->Type Identifier ( ) Block 	5	$ int void 
+Block->{ BlockItem } 	1	$ int void 
+
+state 12
+FuncDecl->Type Identifier ( FuncParam ) ; 	5	$ int void 
+FuncDef->Type Identifier ( FuncParam ) Block 	5	$ int void 
+
+state 13
+FuncParam->Type Identifier 	2	) 
+FuncParam->Type Identifier , FuncParam 	2	) 
+
+state 14
+FuncDecl->Type Identifier ( ) ; 	6	$ int void 
+
+state 15
+FuncDef->Type Identifier ( ) Block 	6	$ int void 
+
+state 16
+Block->{ BlockItem } 	2	$ int void 
+BlockItem->Stmt 	1	} 
+BlockItem->VarDef 	1	} 
+BlockItem->VarAssign 	1	} 
+Stmt->VarStmt 	1	} 
+Stmt->VarStmt Stmt 	1	} 
+Stmt->Block 	1	} 
+Stmt->Block Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	} 
+Stmt->while ( RelationExpr ) Stmt 	1	} 
+Stmt->return Expr ; 	1	} 
+Stmt->return ; 	1	} 
+Stmt->continue ; 	1	} 
+Stmt->break ; 	1	} 
+Stmt->; 	1	} 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDecl 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+VarDecl->Type Identifier ; 	1	; Identifier break continue if int return void while { } 
+
+state 17
+FuncDecl->Type Identifier ( FuncParam ) ; 	6	$ int void 
+FuncDef->Type Identifier ( FuncParam ) Block 	6	$ int void 
+Block->{ BlockItem } 	1	$ int void 
+
+state 18
+FuncParam->Type Identifier 	3	) 
+FuncParam->Type Identifier , FuncParam 	3	) 
+
+state 19
+Stmt->; 	2	} 
+
+state 20
+Stmt->Block 	2	} 
+Stmt->Block Stmt 	2	} 
+Stmt->VarStmt 	1	} 
+Stmt->VarStmt Stmt 	1	} 
+Stmt->Block 	1	} 
+Stmt->Block Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	} 
+Stmt->while ( RelationExpr ) Stmt 	1	} 
+Stmt->return Expr ; 	1	} 
+Stmt->return ; 	1	} 
+Stmt->continue ; 	1	} 
+Stmt->break ; 	1	} 
+Stmt->; 	1	} 
+VarStmt->VarDecl 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 21
+Block->{ BlockItem } 	3	$ int void 
+
+state 22
+VarAssign->Identifier = Expr ; 	2	; Identifier break continue if int return void while { } 
+
+state 23
+BlockItem->Stmt 	2	} 
+
+state 24
+VarDef->Type Identifier = Expr ; 	2	; Identifier break continue if int return void while { } 
+VarDecl->Type Identifier ; 	2	; Identifier break continue if int return void while { } 
+
+state 25
+BlockItem->VarAssign 	2	} 
+VarStmt->VarAssign 	2	; Identifier break continue if int return void while { } 
+
+state 26
+VarStmt->VarDecl 	2	; Identifier break continue if int return void while { } 
+
+state 27
+BlockItem->VarDef 	2	} 
+VarStmt->VarDef 	2	; Identifier break continue if int return void while { } 
+
+state 28
+Stmt->VarStmt 	2	} 
+Stmt->VarStmt Stmt 	2	} 
+Stmt->VarStmt 	1	} 
+Stmt->VarStmt Stmt 	1	} 
+Stmt->Block 	1	} 
+Stmt->Block Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	} 
+Stmt->while ( RelationExpr ) Stmt 	1	} 
+Stmt->return Expr ; 	1	} 
+Stmt->return ; 	1	} 
+Stmt->continue ; 	1	} 
+Stmt->break ; 	1	} 
+Stmt->; 	1	} 
+VarStmt->VarDecl 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 29
+Stmt->break ; 	2	} 
+
+state 30
+Stmt->continue ; 	2	} 
+
+state 31
+Stmt->if ( RelationExpr ) Stmt 	2	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	2	} 
+
+state 32
+Stmt->return Expr ; 	2	} 
+Stmt->return ; 	2	} 
+Expr->RelationExpr 	1	; 
+Expr->OperationExpr 	1	; 
+Expr->Identifier ( ) 	1	; 
+Expr->Identifier ( IdentList ) 	1	; 
+RelationExpr->UnequalExpr 	1	; 
+RelationExpr->EqualExpr 	1	; 
+OperationExpr->OperationExpr + Term 	1	+ - ; < <= > >= 
+OperationExpr->OperationExpr - Term 	1	+ - ; < <= > >= 
+OperationExpr->Term 	1	+ - ; < <= > >= 
+UnequalExpr->OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ; < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ; == 
+Term->Term * Factor 	1	* + - / ; 
+Term->Term / Factor 	1	* + - / ; 
+Term->Factor 	1	* + - / ; 
+Factor->( OperationExpr ) 	1	* + - / ; 
+Factor->Digits 	1	* + - / ; 
+Factor->Identifier 	1	* + - / ; 
+
+state 33
+Stmt->while ( RelationExpr ) Stmt 	2	} 
+
+state 34
+Block->{ BlockItem } 	2	; Identifier break continue if int return void while { } 
+BlockItem->Stmt 	1	} 
+BlockItem->VarDef 	1	} 
+BlockItem->VarAssign 	1	} 
+Stmt->VarStmt 	1	} 
+Stmt->VarStmt Stmt 	1	} 
+Stmt->Block 	1	} 
+Stmt->Block Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	} 
+Stmt->while ( RelationExpr ) Stmt 	1	} 
+Stmt->return Expr ; 	1	} 
+Stmt->return ; 	1	} 
+Stmt->continue ; 	1	} 
+Stmt->break ; 	1	} 
+Stmt->; 	1	} 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDecl 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+VarDecl->Type Identifier ; 	1	; Identifier break continue if int return void while { } 
+
+state 35
+FuncDecl->Type Identifier ( FuncParam ) ; 	7	$ int void 
+
+state 36
+FuncDef->Type Identifier ( FuncParam ) Block 	7	$ int void 
+
+state 37
+FuncParam->Type Identifier , FuncParam 	4	) 
+FuncParam->Type Identifier 	1	) 
+FuncParam->Type Identifier , FuncParam 	1	) 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 38
+Stmt->Block Stmt 	3	} 
+
+state 39
+VarStmt->VarAssign 	2	; Identifier break continue if int return void while { } 
+
+state 40
+VarStmt->VarDef 	2	; Identifier break continue if int return void while { } 
+
+state 41
+Block->{ BlockItem } 	4	$ int void 
+
+state 42
+VarAssign->Identifier = Expr ; 	3	; Identifier break continue if int return void while { } 
+Expr->RelationExpr 	1	; 
+Expr->OperationExpr 	1	; 
+Expr->Identifier ( ) 	1	; 
+Expr->Identifier ( IdentList ) 	1	; 
+RelationExpr->UnequalExpr 	1	; 
+RelationExpr->EqualExpr 	1	; 
+OperationExpr->OperationExpr + Term 	1	+ - ; < <= > >= 
+OperationExpr->OperationExpr - Term 	1	+ - ; < <= > >= 
+OperationExpr->Term 	1	+ - ; < <= > >= 
+UnequalExpr->OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ; < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ; == 
+Term->Term * Factor 	1	* + - / ; 
+Term->Term / Factor 	1	* + - / ; 
+Term->Factor 	1	* + - / ; 
+Factor->( OperationExpr ) 	1	* + - / ; 
+Factor->Digits 	1	* + - / ; 
+Factor->Identifier 	1	* + - / ; 
+
+state 43
+VarDef->Type Identifier = Expr ; 	3	; Identifier break continue if int return void while { } 
+VarDecl->Type Identifier ; 	3	; Identifier break continue if int return void while { } 
+
+state 44
+Stmt->VarStmt Stmt 	3	} 
+
+state 45
+Stmt->break ; 	3	} 
+
+state 46
+Stmt->continue ; 	3	} 
+
+state 47
+Stmt->if ( RelationExpr ) Stmt 	3	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	3	} 
+RelationExpr->UnequalExpr 	1	) 
+RelationExpr->EqualExpr 	1	) 
+UnequalExpr->OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ) < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ) == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ) == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ) == 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 48
+Factor->( OperationExpr ) 	2	* + - / ; 
+OperationExpr->OperationExpr + Term 	1	) + - 
+OperationExpr->OperationExpr - Term 	1	) + - 
+OperationExpr->Term 	1	) + - 
+Term->Term * Factor 	1	) * + - / 
+Term->Term / Factor 	1	) * + - / 
+Term->Factor 	1	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 49
+Stmt->return ; 	3	} 
+
+state 50
+Factor->Digits 	2	* + - / ; 
+
+state 51
+RelationExpr->EqualExpr 	2	; 
+EqualExpr->EqualExpr == UnequalExpr 	2	!= ; == 
+EqualExpr->EqualExpr != UnequalExpr 	2	!= ; == 
+
+state 52
+Stmt->return Expr ; 	3	} 
+
+state 53
+Term->Factor 	2	* + - / ; 
+
+state 54
+Expr->Identifier ( ) 	2	; 
+Expr->Identifier ( IdentList ) 	2	; 
+Factor->Identifier 	2	* + - / ; 
+
+state 55
+Expr->OperationExpr 	2	; 
+OperationExpr->OperationExpr + Term 	2	+ - ; < <= > >= 
+OperationExpr->OperationExpr - Term 	2	+ - ; < <= > >= 
+UnequalExpr->OperationExpr 	2	!= ; < <= == > >= 
+
+state 56
+Expr->RelationExpr 	2	; 
+
+state 57
+OperationExpr->Term 	2	+ - ; < <= > >= 
+Term->Term * Factor 	2	* + - / ; 
+Term->Term / Factor 	2	* + - / ; 
+
+state 58
+RelationExpr->UnequalExpr 	2	; 
+UnequalExpr->UnequalExpr < OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	2	!= ; < <= == > >= 
+EqualExpr->UnequalExpr 	2	!= ; == 
+
+state 59
+Stmt->while ( RelationExpr ) Stmt 	3	} 
+RelationExpr->UnequalExpr 	1	) 
+RelationExpr->EqualExpr 	1	) 
+UnequalExpr->OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ) < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ) == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ) == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ) == 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 60
+Block->{ BlockItem } 	3	; Identifier break continue if int return void while { } 
+
+state 61
+FuncParam->Type Identifier , FuncParam 	5	) 
+
+state 62
+VarAssign->Identifier = Expr ; 	4	; Identifier break continue if int return void while { } 
+
+state 63
+VarDecl->Type Identifier ; 	4	; Identifier break continue if int return void while { } 
+
+state 64
+VarDef->Type Identifier = Expr ; 	4	; Identifier break continue if int return void while { } 
+Expr->RelationExpr 	1	; 
+Expr->OperationExpr 	1	; 
+Expr->Identifier ( ) 	1	; 
+Expr->Identifier ( IdentList ) 	1	; 
+RelationExpr->UnequalExpr 	1	; 
+RelationExpr->EqualExpr 	1	; 
+OperationExpr->OperationExpr + Term 	1	+ - ; < <= > >= 
+OperationExpr->OperationExpr - Term 	1	+ - ; < <= > >= 
+OperationExpr->Term 	1	+ - ; < <= > >= 
+UnequalExpr->OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ; < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ; == 
+Term->Term * Factor 	1	* + - / ; 
+Term->Term / Factor 	1	* + - / ; 
+Term->Factor 	1	* + - / ; 
+Factor->( OperationExpr ) 	1	* + - / ; 
+Factor->Digits 	1	* + - / ; 
+Factor->Identifier 	1	* + - / ; 
+
+state 65
+Factor->( OperationExpr ) 	2	!= ) * + - / < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	) + - 
+OperationExpr->OperationExpr - Term 	1	) + - 
+OperationExpr->Term 	1	) + - 
+Term->Term * Factor 	1	) * + - / 
+Term->Term / Factor 	1	) * + - / 
+Term->Factor 	1	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 66
+Factor->Digits 	2	!= ) * + - / < <= == > >= 
+
+state 67
+RelationExpr->EqualExpr 	2	) 
+EqualExpr->EqualExpr == UnequalExpr 	2	!= ) == 
+EqualExpr->EqualExpr != UnequalExpr 	2	!= ) == 
+
+state 68
+Term->Factor 	2	!= ) * + - / < <= == > >= 
+
+state 69
+Factor->Identifier 	2	!= ) * + - / < <= == > >= 
+
+state 70
+UnequalExpr->OperationExpr 	2	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= ) + - < <= == > >= 
+
+state 71
+Stmt->if ( RelationExpr ) Stmt 	4	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	4	} 
+
+state 72
+OperationExpr->Term 	2	!= ) + - < <= == > >= 
+Term->Term * Factor 	2	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	2	!= ) * + - / < <= == > >= 
+
+state 73
+RelationExpr->UnequalExpr 	2	) 
+UnequalExpr->UnequalExpr < OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	2	!= ) < <= == > >= 
+EqualExpr->UnequalExpr 	2	!= ) == 
+
+state 74
+Factor->( OperationExpr ) 	2	) * + - / 
+OperationExpr->OperationExpr + Term 	1	) + - 
+OperationExpr->OperationExpr - Term 	1	) + - 
+OperationExpr->Term 	1	) + - 
+Term->Term * Factor 	1	) * + - / 
+Term->Term / Factor 	1	) * + - / 
+Term->Factor 	1	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 75
+Factor->Digits 	2	) * + - / 
+
+state 76
+Term->Factor 	2	) * + - / 
+
+state 77
+Factor->Identifier 	2	) * + - / 
+
+state 78
+Factor->( OperationExpr ) 	3	* + - / ; 
+OperationExpr->OperationExpr + Term 	2	) + - 
+OperationExpr->OperationExpr - Term 	2	) + - 
+
+state 79
+OperationExpr->Term 	2	) + - 
+Term->Term * Factor 	2	) * + - / 
+Term->Term / Factor 	2	) * + - / 
+
+state 80
+EqualExpr->EqualExpr != UnequalExpr 	3	!= ; == 
+UnequalExpr->OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= + - ; < <= == > >= 
+OperationExpr->Term 	1	!= + - ; < <= == > >= 
+Term->Term * Factor 	1	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	1	!= * + - / ; < <= == > >= 
+Term->Factor 	1	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 81
+EqualExpr->EqualExpr == UnequalExpr 	3	!= ; == 
+UnequalExpr->OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= + - ; < <= == > >= 
+OperationExpr->Term 	1	!= + - ; < <= == > >= 
+Term->Term * Factor 	1	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	1	!= * + - / ; < <= == > >= 
+Term->Factor 	1	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 82
+Stmt->return Expr ; 	4	} 
+
+state 83
+Expr->Identifier ( ) 	3	; 
+Expr->Identifier ( IdentList ) 	3	; 
+IdentList->Identifier 	1	) 
+IdentList->Identifier , IdentList 	1	) 
+
+state 84
+OperationExpr->OperationExpr + Term 	3	+ - ; < <= > >= 
+Term->Term * Factor 	1	* + - / ; < <= > >= 
+Term->Term / Factor 	1	* + - / ; < <= > >= 
+Term->Factor 	1	* + - / ; < <= > >= 
+Factor->( OperationExpr ) 	1	* + - / ; < <= > >= 
+Factor->Digits 	1	* + - / ; < <= > >= 
+Factor->Identifier 	1	* + - / ; < <= > >= 
+
+state 85
+OperationExpr->OperationExpr - Term 	3	+ - ; < <= > >= 
+Term->Term * Factor 	1	* + - / ; < <= > >= 
+Term->Term / Factor 	1	* + - / ; < <= > >= 
+Term->Factor 	1	* + - / ; < <= > >= 
+Factor->( OperationExpr ) 	1	* + - / ; < <= > >= 
+Factor->Digits 	1	* + - / ; < <= > >= 
+Factor->Identifier 	1	* + - / ; < <= > >= 
+
+state 86
+Term->Term * Factor 	3	* + - / ; 
+Factor->( OperationExpr ) 	1	* + - / ; 
+Factor->Digits 	1	* + - / ; 
+Factor->Identifier 	1	* + - / ; 
+
+state 87
+Term->Term / Factor 	3	* + - / ; 
+Factor->( OperationExpr ) 	1	* + - / ; 
+Factor->Digits 	1	* + - / ; 
+Factor->Identifier 	1	* + - / ; 
+
+state 88
+UnequalExpr->UnequalExpr < OperationExpr 	3	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= + - ; < <= == > >= 
+OperationExpr->Term 	1	!= + - ; < <= == > >= 
+Term->Term * Factor 	1	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	1	!= * + - / ; < <= == > >= 
+Term->Factor 	1	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 89
+UnequalExpr->UnequalExpr <= OperationExpr 	3	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= + - ; < <= == > >= 
+OperationExpr->Term 	1	!= + - ; < <= == > >= 
+Term->Term * Factor 	1	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	1	!= * + - / ; < <= == > >= 
+Term->Factor 	1	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 90
+UnequalExpr->UnequalExpr > OperationExpr 	3	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= + - ; < <= == > >= 
+OperationExpr->Term 	1	!= + - ; < <= == > >= 
+Term->Term * Factor 	1	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	1	!= * + - / ; < <= == > >= 
+Term->Factor 	1	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 91
+UnequalExpr->UnequalExpr >= OperationExpr 	3	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= + - ; < <= == > >= 
+OperationExpr->Term 	1	!= + - ; < <= == > >= 
+Term->Term * Factor 	1	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	1	!= * + - / ; < <= == > >= 
+Term->Factor 	1	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 92
+Stmt->while ( RelationExpr ) Stmt 	4	} 
+
+state 93
+Block->{ BlockItem } 	4	; Identifier break continue if int return void while { } 
+
+state 94
+VarAssign->Identifier = Expr ; 	5	; Identifier break continue if int return void while { } 
+
+state 95
+VarDef->Type Identifier = Expr ; 	5	; Identifier break continue if int return void while { } 
+
+state 96
+Factor->( OperationExpr ) 	3	!= ) * + - / < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	) + - 
+OperationExpr->OperationExpr - Term 	2	) + - 
+
+state 97
+EqualExpr->EqualExpr != UnequalExpr 	3	!= ) == 
+UnequalExpr->OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 98
+EqualExpr->EqualExpr == UnequalExpr 	3	!= ) == 
+UnequalExpr->OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 99
+OperationExpr->OperationExpr + Term 	3	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 100
+OperationExpr->OperationExpr - Term 	3	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 101
+Stmt->if ( RelationExpr ) Stmt 	5	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	5	} 
+Stmt->VarStmt 	1	else } 
+Stmt->VarStmt Stmt 	1	else } 
+Stmt->Block 	1	else } 
+Stmt->Block Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	else } 
+Stmt->while ( RelationExpr ) Stmt 	1	else } 
+Stmt->return Expr ; 	1	else } 
+Stmt->return ; 	1	else } 
+Stmt->continue ; 	1	else } 
+Stmt->break ; 	1	else } 
+Stmt->; 	1	else } 
+VarStmt->VarDecl 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue else if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue else if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue else if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 102
+Term->Term * Factor 	3	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 103
+Term->Term / Factor 	3	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 104
+UnequalExpr->UnequalExpr < OperationExpr 	3	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 105
+UnequalExpr->UnequalExpr <= OperationExpr 	3	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 106
+UnequalExpr->UnequalExpr > OperationExpr 	3	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 107
+UnequalExpr->UnequalExpr >= OperationExpr 	3	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 108
+Factor->( OperationExpr ) 	3	) * + - / 
+OperationExpr->OperationExpr + Term 	2	) + - 
+OperationExpr->OperationExpr - Term 	2	) + - 
+
+state 109
+Factor->( OperationExpr ) 	4	* + - / ; 
+
+state 110
+OperationExpr->OperationExpr + Term 	3	) + - 
+Term->Term * Factor 	1	) * + - / 
+Term->Term / Factor 	1	) * + - / 
+Term->Factor 	1	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 111
+OperationExpr->OperationExpr - Term 	3	) + - 
+Term->Term * Factor 	1	) * + - / 
+Term->Term / Factor 	1	) * + - / 
+Term->Factor 	1	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 112
+Term->Term * Factor 	3	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 113
+Term->Term / Factor 	3	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 114
+Factor->( OperationExpr ) 	2	!= * + - / ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	1	) + - 
+OperationExpr->OperationExpr - Term 	1	) + - 
+OperationExpr->Term 	1	) + - 
+Term->Term * Factor 	1	) * + - / 
+Term->Term / Factor 	1	) * + - / 
+Term->Factor 	1	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 115
+Factor->Digits 	2	!= * + - / ; < <= == > >= 
+
+state 116
+Term->Factor 	2	!= * + - / ; < <= == > >= 
+
+state 117
+Factor->Identifier 	2	!= * + - / ; < <= == > >= 
+
+state 118
+UnequalExpr->OperationExpr 	2	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= + - ; < <= == > >= 
+
+state 119
+OperationExpr->Term 	2	!= + - ; < <= == > >= 
+Term->Term * Factor 	2	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	2	!= * + - / ; < <= == > >= 
+
+state 120
+EqualExpr->EqualExpr != UnequalExpr 	4	!= ; == 
+UnequalExpr->UnequalExpr < OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	2	!= ; < <= == > >= 
+
+state 121
+EqualExpr->EqualExpr == UnequalExpr 	4	!= ; == 
+UnequalExpr->UnequalExpr < OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	2	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	2	!= ; < <= == > >= 
+
+state 122
+Expr->Identifier ( ) 	4	; 
+
+state 123
+Expr->Identifier ( IdentList ) 	4	; 
+
+state 124
+IdentList->Identifier 	2	) 
+IdentList->Identifier , IdentList 	2	) 
+
+state 125
+Factor->( OperationExpr ) 	2	* + - / ; < <= > >= 
+OperationExpr->OperationExpr + Term 	1	) + - 
+OperationExpr->OperationExpr - Term 	1	) + - 
+OperationExpr->Term 	1	) + - 
+Term->Term * Factor 	1	) * + - / 
+Term->Term / Factor 	1	) * + - / 
+Term->Factor 	1	) * + - / 
+Factor->( OperationExpr ) 	1	) * + - / 
+Factor->Digits 	1	) * + - / 
+Factor->Identifier 	1	) * + - / 
+
+state 126
+Factor->Digits 	2	* + - / ; < <= > >= 
+
+state 127
+Term->Factor 	2	* + - / ; < <= > >= 
+
+state 128
+Factor->Identifier 	2	* + - / ; < <= > >= 
+
+state 129
+OperationExpr->OperationExpr + Term 	4	+ - ; < <= > >= 
+Term->Term * Factor 	2	* + - / ; < <= > >= 
+Term->Term / Factor 	2	* + - / ; < <= > >= 
+
+state 130
+OperationExpr->OperationExpr - Term 	4	+ - ; < <= > >= 
+Term->Term * Factor 	2	* + - / ; < <= > >= 
+Term->Term / Factor 	2	* + - / ; < <= > >= 
+
+state 131
+Term->Term * Factor 	4	* + - / ; 
+
+state 132
+Factor->Identifier 	2	* + - / ; 
+
+state 133
+Term->Term / Factor 	4	* + - / ; 
+
+state 134
+UnequalExpr->UnequalExpr < OperationExpr 	4	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= + - ; < <= == > >= 
+
+state 135
+UnequalExpr->UnequalExpr <= OperationExpr 	4	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= + - ; < <= == > >= 
+
+state 136
+UnequalExpr->UnequalExpr > OperationExpr 	4	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= + - ; < <= == > >= 
+
+state 137
+UnequalExpr->UnequalExpr >= OperationExpr 	4	!= ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= + - ; < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= + - ; < <= == > >= 
+
+state 138
+Stmt->while ( RelationExpr ) Stmt 	5	} 
+Stmt->VarStmt 	1	} 
+Stmt->VarStmt Stmt 	1	} 
+Stmt->Block 	1	} 
+Stmt->Block Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	} 
+Stmt->while ( RelationExpr ) Stmt 	1	} 
+Stmt->return Expr ; 	1	} 
+Stmt->return ; 	1	} 
+Stmt->continue ; 	1	} 
+Stmt->break ; 	1	} 
+Stmt->; 	1	} 
+VarStmt->VarDecl 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 139
+VarDef->Type Identifier = Expr ; 	6	; Identifier break continue if int return void while { } 
+
+state 140
+Factor->( OperationExpr ) 	4	!= ) * + - / < <= == > >= 
+
+state 141
+EqualExpr->EqualExpr != UnequalExpr 	4	!= ) == 
+UnequalExpr->UnequalExpr < OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	2	!= ) < <= == > >= 
+
+state 142
+EqualExpr->EqualExpr == UnequalExpr 	4	!= ) == 
+UnequalExpr->UnequalExpr < OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	2	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	2	!= ) < <= == > >= 
+
+state 143
+OperationExpr->OperationExpr + Term 	4	!= ) + - < <= == > >= 
+Term->Term * Factor 	2	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	2	!= ) * + - / < <= == > >= 
+
+state 144
+OperationExpr->OperationExpr - Term 	4	!= ) + - < <= == > >= 
+Term->Term * Factor 	2	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	2	!= ) * + - / < <= == > >= 
+
+state 145
+Stmt->; 	2	else } 
+
+state 146
+Stmt->Block 	2	else } 
+Stmt->Block Stmt 	2	else } 
+Stmt->VarStmt 	1	else } 
+Stmt->VarStmt Stmt 	1	else } 
+Stmt->Block 	1	else } 
+Stmt->Block Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	else } 
+Stmt->while ( RelationExpr ) Stmt 	1	else } 
+Stmt->return Expr ; 	1	else } 
+Stmt->return ; 	1	else } 
+Stmt->continue ; 	1	else } 
+Stmt->break ; 	1	else } 
+Stmt->; 	1	else } 
+VarStmt->VarDecl 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue else if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue else if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue else if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 147
+VarAssign->Identifier = Expr ; 	2	; Identifier break continue else if int return void while { } 
+
+state 148
+Stmt->if ( RelationExpr ) Stmt 	6	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	6	} 
+
+state 149
+VarDecl->Type Identifier ; 	2	; Identifier break continue else if int return void while { } 
+VarDef->Type Identifier = Expr ; 	2	; Identifier break continue else if int return void while { } 
+
+state 150
+VarStmt->VarAssign 	2	; Identifier break continue else if int return void while { } 
+
+state 151
+VarStmt->VarDecl 	2	; Identifier break continue else if int return void while { } 
+
+state 152
+VarStmt->VarDef 	2	; Identifier break continue else if int return void while { } 
+
+state 153
+Stmt->VarStmt 	2	else } 
+Stmt->VarStmt Stmt 	2	else } 
+Stmt->VarStmt 	1	else } 
+Stmt->VarStmt Stmt 	1	else } 
+Stmt->Block 	1	else } 
+Stmt->Block Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	else } 
+Stmt->while ( RelationExpr ) Stmt 	1	else } 
+Stmt->return Expr ; 	1	else } 
+Stmt->return ; 	1	else } 
+Stmt->continue ; 	1	else } 
+Stmt->break ; 	1	else } 
+Stmt->; 	1	else } 
+VarStmt->VarDecl 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue else if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue else if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue else if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 154
+Stmt->break ; 	2	else } 
+
+state 155
+Stmt->continue ; 	2	else } 
+
+state 156
+Stmt->if ( RelationExpr ) Stmt 	2	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	2	else } 
+
+state 157
+Stmt->return Expr ; 	2	else } 
+Stmt->return ; 	2	else } 
+Expr->RelationExpr 	1	; 
+Expr->OperationExpr 	1	; 
+Expr->Identifier ( ) 	1	; 
+Expr->Identifier ( IdentList ) 	1	; 
+RelationExpr->UnequalExpr 	1	; 
+RelationExpr->EqualExpr 	1	; 
+OperationExpr->OperationExpr + Term 	1	+ - ; < <= > >= 
+OperationExpr->OperationExpr - Term 	1	+ - ; < <= > >= 
+OperationExpr->Term 	1	+ - ; < <= > >= 
+UnequalExpr->OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ; < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ; == 
+Term->Term * Factor 	1	* + - / ; 
+Term->Term / Factor 	1	* + - / ; 
+Term->Factor 	1	* + - / ; 
+Factor->( OperationExpr ) 	1	* + - / ; 
+Factor->Digits 	1	* + - / ; 
+Factor->Identifier 	1	* + - / ; 
+
+state 158
+Stmt->while ( RelationExpr ) Stmt 	2	else } 
+
+state 159
+Block->{ BlockItem } 	2	; Identifier break continue else if int return void while { } 
+BlockItem->Stmt 	1	} 
+BlockItem->VarDef 	1	} 
+BlockItem->VarAssign 	1	} 
+Stmt->VarStmt 	1	} 
+Stmt->VarStmt Stmt 	1	} 
+Stmt->Block 	1	} 
+Stmt->Block Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	} 
+Stmt->while ( RelationExpr ) Stmt 	1	} 
+Stmt->return Expr ; 	1	} 
+Stmt->return ; 	1	} 
+Stmt->continue ; 	1	} 
+Stmt->break ; 	1	} 
+Stmt->; 	1	} 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDecl 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+VarDecl->Type Identifier ; 	1	; Identifier break continue if int return void while { } 
+
+state 160
+Term->Term * Factor 	4	!= ) * + - / < <= == > >= 
+
+state 161
+Term->Term / Factor 	4	!= ) * + - / < <= == > >= 
+
+state 162
+UnequalExpr->UnequalExpr < OperationExpr 	4	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= ) + - < <= == > >= 
+
+state 163
+UnequalExpr->UnequalExpr <= OperationExpr 	4	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= ) + - < <= == > >= 
+
+state 164
+UnequalExpr->UnequalExpr > OperationExpr 	4	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= ) + - < <= == > >= 
+
+state 165
+UnequalExpr->UnequalExpr >= OperationExpr 	4	!= ) < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	2	!= ) + - < <= == > >= 
+
+state 166
+Factor->( OperationExpr ) 	4	) * + - / 
+
+state 167
+OperationExpr->OperationExpr + Term 	4	) + - 
+Term->Term * Factor 	2	) * + - / 
+Term->Term / Factor 	2	) * + - / 
+
+state 168
+OperationExpr->OperationExpr - Term 	4	) + - 
+Term->Term * Factor 	2	) * + - / 
+Term->Term / Factor 	2	) * + - / 
+
+state 169
+Term->Term * Factor 	4	) * + - / 
+
+state 170
+Term->Term / Factor 	4	) * + - / 
+
+state 171
+Factor->( OperationExpr ) 	3	!= * + - / ; < <= == > >= 
+OperationExpr->OperationExpr + Term 	2	) + - 
+OperationExpr->OperationExpr - Term 	2	) + - 
+
+state 172
+OperationExpr->OperationExpr + Term 	3	!= + - ; < <= == > >= 
+Term->Term * Factor 	1	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	1	!= * + - / ; < <= == > >= 
+Term->Factor 	1	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 173
+OperationExpr->OperationExpr - Term 	3	!= + - ; < <= == > >= 
+Term->Term * Factor 	1	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	1	!= * + - / ; < <= == > >= 
+Term->Factor 	1	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 174
+Term->Term * Factor 	3	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 175
+Term->Term / Factor 	3	!= * + - / ; < <= == > >= 
+Factor->( OperationExpr ) 	1	!= * + - / ; < <= == > >= 
+Factor->Digits 	1	!= * + - / ; < <= == > >= 
+Factor->Identifier 	1	!= * + - / ; < <= == > >= 
+
+state 176
+Expr->Identifier ( IdentList ) 	5	; 
+
+state 177
+IdentList->Identifier , IdentList 	3	) 
+IdentList->Identifier 	1	) 
+IdentList->Identifier , IdentList 	1	) 
+
+state 178
+Factor->( OperationExpr ) 	3	* + - / ; < <= > >= 
+OperationExpr->OperationExpr + Term 	2	) + - 
+OperationExpr->OperationExpr - Term 	2	) + - 
+
+state 179
+Term->Term * Factor 	3	* + - / ; < <= > >= 
+Factor->( OperationExpr ) 	1	* + - / ; < <= > >= 
+Factor->Digits 	1	* + - / ; < <= > >= 
+Factor->Identifier 	1	* + - / ; < <= > >= 
+
+state 180
+Term->Term / Factor 	3	* + - / ; < <= > >= 
+Factor->( OperationExpr ) 	1	* + - / ; < <= > >= 
+Factor->Digits 	1	* + - / ; < <= > >= 
+Factor->Identifier 	1	* + - / ; < <= > >= 
+
+state 181
+Stmt->while ( RelationExpr ) Stmt 	6	} 
+
+state 182
+Stmt->Block Stmt 	3	else } 
+
+state 183
+VarAssign->Identifier = Expr ; 	3	; Identifier break continue else if int return void while { } 
+Expr->RelationExpr 	1	; 
+Expr->OperationExpr 	1	; 
+Expr->Identifier ( ) 	1	; 
+Expr->Identifier ( IdentList ) 	1	; 
+RelationExpr->UnequalExpr 	1	; 
+RelationExpr->EqualExpr 	1	; 
+OperationExpr->OperationExpr + Term 	1	+ - ; < <= > >= 
+OperationExpr->OperationExpr - Term 	1	+ - ; < <= > >= 
+OperationExpr->Term 	1	+ - ; < <= > >= 
+UnequalExpr->OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ; < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ; == 
+Term->Term * Factor 	1	* + - / ; 
+Term->Term / Factor 	1	* + - / ; 
+Term->Factor 	1	* + - / ; 
+Factor->( OperationExpr ) 	1	* + - / ; 
+Factor->Digits 	1	* + - / ; 
+Factor->Identifier 	1	* + - / ; 
+
+state 184
+Stmt->if ( RelationExpr ) Stmt else Stmt 	7	} 
+Stmt->VarStmt 	1	} 
+Stmt->VarStmt Stmt 	1	} 
+Stmt->Block 	1	} 
+Stmt->Block Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt 	1	} 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	} 
+Stmt->while ( RelationExpr ) Stmt 	1	} 
+Stmt->return Expr ; 	1	} 
+Stmt->return ; 	1	} 
+Stmt->continue ; 	1	} 
+Stmt->break ; 	1	} 
+Stmt->; 	1	} 
+VarStmt->VarDecl 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 185
+VarDecl->Type Identifier ; 	3	; Identifier break continue else if int return void while { } 
+VarDef->Type Identifier = Expr ; 	3	; Identifier break continue else if int return void while { } 
+
+state 186
+Stmt->VarStmt Stmt 	3	else } 
+
+state 187
+Stmt->break ; 	3	else } 
+
+state 188
+Stmt->continue ; 	3	else } 
+
+state 189
+Stmt->if ( RelationExpr ) Stmt 	3	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	3	else } 
+RelationExpr->UnequalExpr 	1	) 
+RelationExpr->EqualExpr 	1	) 
+UnequalExpr->OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ) < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ) == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ) == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ) == 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 190
+Stmt->return ; 	3	else } 
+
+state 191
+Stmt->return Expr ; 	3	else } 
+
+state 192
+Stmt->while ( RelationExpr ) Stmt 	3	else } 
+RelationExpr->UnequalExpr 	1	) 
+RelationExpr->EqualExpr 	1	) 
+UnequalExpr->OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ) < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ) < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ) == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ) == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ) == 
+OperationExpr->OperationExpr + Term 	1	!= ) + - < <= == > >= 
+OperationExpr->OperationExpr - Term 	1	!= ) + - < <= == > >= 
+OperationExpr->Term 	1	!= ) + - < <= == > >= 
+Term->Term * Factor 	1	!= ) * + - / < <= == > >= 
+Term->Term / Factor 	1	!= ) * + - / < <= == > >= 
+Term->Factor 	1	!= ) * + - / < <= == > >= 
+Factor->( OperationExpr ) 	1	!= ) * + - / < <= == > >= 
+Factor->Digits 	1	!= ) * + - / < <= == > >= 
+Factor->Identifier 	1	!= ) * + - / < <= == > >= 
+
+state 193
+Block->{ BlockItem } 	3	; Identifier break continue else if int return void while { } 
+
+state 194
+Factor->( OperationExpr ) 	4	!= * + - / ; < <= == > >= 
+
+state 195
+OperationExpr->OperationExpr + Term 	4	!= + - ; < <= == > >= 
+Term->Term * Factor 	2	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	2	!= * + - / ; < <= == > >= 
+
+state 196
+OperationExpr->OperationExpr - Term 	4	!= + - ; < <= == > >= 
+Term->Term * Factor 	2	!= * + - / ; < <= == > >= 
+Term->Term / Factor 	2	!= * + - / ; < <= == > >= 
+
+state 197
+Term->Term * Factor 	4	!= * + - / ; < <= == > >= 
+
+state 198
+Term->Term / Factor 	4	!= * + - / ; < <= == > >= 
+
+state 199
+IdentList->Identifier , IdentList 	4	) 
+
+state 200
+Factor->( OperationExpr ) 	4	* + - / ; < <= > >= 
+
+state 201
+Term->Term * Factor 	4	* + - / ; < <= > >= 
+
+state 202
+Term->Term / Factor 	4	* + - / ; < <= > >= 
+
+state 203
+VarAssign->Identifier = Expr ; 	4	; Identifier break continue else if int return void while { } 
+
+state 204
+Stmt->if ( RelationExpr ) Stmt else Stmt 	8	} 
+
+state 205
+VarDecl->Type Identifier ; 	4	; Identifier break continue else if int return void while { } 
+
+state 206
+VarDef->Type Identifier = Expr ; 	4	; Identifier break continue else if int return void while { } 
+Expr->RelationExpr 	1	; 
+Expr->OperationExpr 	1	; 
+Expr->Identifier ( ) 	1	; 
+Expr->Identifier ( IdentList ) 	1	; 
+RelationExpr->UnequalExpr 	1	; 
+RelationExpr->EqualExpr 	1	; 
+OperationExpr->OperationExpr + Term 	1	+ - ; < <= > >= 
+OperationExpr->OperationExpr - Term 	1	+ - ; < <= > >= 
+OperationExpr->Term 	1	+ - ; < <= > >= 
+UnequalExpr->OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr < OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr > OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr <= OperationExpr 	1	!= ; < <= == > >= 
+UnequalExpr->UnequalExpr >= OperationExpr 	1	!= ; < <= == > >= 
+EqualExpr->UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr == UnequalExpr 	1	!= ; == 
+EqualExpr->EqualExpr != UnequalExpr 	1	!= ; == 
+Term->Term * Factor 	1	* + - / ; 
+Term->Term / Factor 	1	* + - / ; 
+Term->Factor 	1	* + - / ; 
+Factor->( OperationExpr ) 	1	* + - / ; 
+Factor->Digits 	1	* + - / ; 
+Factor->Identifier 	1	* + - / ; 
+
+state 207
+Stmt->if ( RelationExpr ) Stmt 	4	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	4	else } 
+
+state 208
+Stmt->return Expr ; 	4	else } 
+
+state 209
+Stmt->while ( RelationExpr ) Stmt 	4	else } 
+
+state 210
+Block->{ BlockItem } 	4	; Identifier break continue else if int return void while { } 
+
+state 211
+VarAssign->Identifier = Expr ; 	5	; Identifier break continue else if int return void while { } 
+
+state 212
+VarDef->Type Identifier = Expr ; 	5	; Identifier break continue else if int return void while { } 
+
+state 213
+Stmt->if ( RelationExpr ) Stmt 	5	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	5	else } 
+Stmt->VarStmt 	1	else } 
+Stmt->VarStmt Stmt 	1	else } 
+Stmt->Block 	1	else } 
+Stmt->Block Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	else } 
+Stmt->while ( RelationExpr ) Stmt 	1	else } 
+Stmt->return Expr ; 	1	else } 
+Stmt->return ; 	1	else } 
+Stmt->continue ; 	1	else } 
+Stmt->break ; 	1	else } 
+Stmt->; 	1	else } 
+VarStmt->VarDecl 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue else if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue else if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue else if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 214
+Stmt->while ( RelationExpr ) Stmt 	5	else } 
+Stmt->VarStmt 	1	else } 
+Stmt->VarStmt Stmt 	1	else } 
+Stmt->Block 	1	else } 
+Stmt->Block Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	else } 
+Stmt->while ( RelationExpr ) Stmt 	1	else } 
+Stmt->return Expr ; 	1	else } 
+Stmt->return ; 	1	else } 
+Stmt->continue ; 	1	else } 
+Stmt->break ; 	1	else } 
+Stmt->; 	1	else } 
+VarStmt->VarDecl 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue else if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue else if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue else if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 215
+VarDef->Type Identifier = Expr ; 	6	; Identifier break continue else if int return void while { } 
+
+state 216
+Stmt->if ( RelationExpr ) Stmt 	6	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	6	else } 
+
+state 217
+Stmt->while ( RelationExpr ) Stmt 	6	else } 
+
+state 218
+Stmt->if ( RelationExpr ) Stmt else Stmt 	7	else } 
+Stmt->VarStmt 	1	else } 
+Stmt->VarStmt Stmt 	1	else } 
+Stmt->Block 	1	else } 
+Stmt->Block Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt 	1	else } 
+Stmt->if ( RelationExpr ) Stmt else Stmt 	1	else } 
+Stmt->while ( RelationExpr ) Stmt 	1	else } 
+Stmt->return Expr ; 	1	else } 
+Stmt->return ; 	1	else } 
+Stmt->continue ; 	1	else } 
+Stmt->break ; 	1	else } 
+Stmt->; 	1	else } 
+VarStmt->VarDecl 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarDef 	1	; Identifier break continue else if int return void while { } 
+VarStmt->VarAssign 	1	; Identifier break continue else if int return void while { } 
+Block->{ BlockItem } 	1	; Identifier break continue else if int return void while { } 
+VarDecl->Type Identifier ; 	1	; Identifier break continue else if int return void while { } 
+VarDef->Type Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+VarAssign->Identifier = Expr ; 	1	; Identifier break continue else if int return void while { } 
+Type->int 	1	Identifier 
+Type->void 	1	Identifier 
+
+state 219
+Stmt->if ( RelationExpr ) Stmt else Stmt 	8	else } 
+

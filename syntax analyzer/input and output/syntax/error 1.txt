@@ -1,0 +1,23 @@
+int Identifier ( int Identifier , int Identifier ) { 
+if ( Identifier < Identifier ) { 
+return Identifier ; ; 
+} else { 
+return Identifier ; 
+} 
+} 
+
+int Identifier ( ) { 
+int Identifier = Digits ; 
+int Identifier = Digits * Identifier - Digits ; 
+int Identifier = Identifier ( Identifier , Identifier ) ; 
+int Identifier = Digits ; 
+while ( Identifier > Digits ) { 
+Identifier = Identifier - Digits ; 
+if ( Identifier / Digits != Digits ) { 
+continue ; 
+} 
+Identifier = Identifier / Digits ; 
+} 
+return Digits ; 
+} 
+
