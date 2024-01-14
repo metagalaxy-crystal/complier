@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+
+
+<Reserved,int><id,f>(<Reserved,int><id,n>,<Reserved,int><id,k>)
+{
+<Reserved,int><id,a>;<id,a><op,=><num, 5>;
+<Reserved,int><id,b>;
+<id,b><op,=><id,k><op,+><num, 2>;
+<Reserved,if>(<id,n><op,==><num, 0>)<id,b><op,=><num, 10>;
+<Reserved,else><id,b><op,=><id,b><op,+><id,n><op,*><id,n><op,+><id,f>(<id,n><op,-><num, 1>,<id,k><op,-><num, 1>);
+<Reserved,return><id,b><op,*><id,k>;
+}
+
+<Reserved,void><id,main>()
+{
+<Reserved,int><id,a>;
+<id,a><op,=><id,f>(<num, 2>,<num, 4>);
+<Reserved,cout><op,<<><id,a>;
+}
+
+<Reserved,void>

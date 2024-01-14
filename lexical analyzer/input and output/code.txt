@@ -1,0 +1,28 @@
+//#include <iostream>
+//using namespace std;
+
+/*/
+int main(){
+	cout<<"hello world!";
+}
+*/
+
+int f(int n, int k)
+{
+	/*expmple*/int a; a=5;
+	int b;
+	b = k + 2;
+	if (n == 0) b = 10;
+	else b = b + n * n + f(n - 1, k - 1);
+	return b * k;
+}
+
+void main()
+{
+	int a;
+	a = f(2, 4);
+	cout << a;
+}
+
+void 05_22(){}
+
